@@ -21,7 +21,7 @@ module.exports = {
 
         picture: {
             type: 'string',
-            required: true,
+            required: false,
         },
 
     },
