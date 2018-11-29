@@ -11,10 +11,10 @@ export const submitForm = userData => {
 	formData.append('name', userData.name);
 	formData.append('phone', userData.phone);
 	console.log('posting', formData);
-	
+
 	return (dispatch) => {
 		axios({
-			url: `http://localhost:1337/user/create`,
+			url: `user/create`,
 			method: 'POST',
 			data: formData,
 			headers: {
@@ -42,7 +42,7 @@ export const submitForm = userData => {
 export const fetchInfo = () => {
 	console.log(`fetching`)
 	return (dispatch) => {
-		axios.get(`http://localhost:1337/user`)
+		axios.get(`user`)
 			.then(response => {
 				console.log(response);
 				dispatch({
