@@ -19,7 +19,13 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepage' },
+  '/*': {
+    controller: 'IndexController',
+    action: 'render',
+    skipAssets: true
+  }
+
+  // '/': { view: 'pages/homepage' }
 
 
   /***************************************************************************
