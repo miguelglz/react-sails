@@ -12,7 +12,7 @@ module.exports = {
             sails.log("Post");
             var name = req.param("name");
             var phone = req.param("phone");
-            var picture = req.file("picture");
+            // var picture = req.file("picture");
             sails.log(picture);
 
             var insert = `INSERT INTO users(name, phone) VALUES("${name}", ${phone})`;
