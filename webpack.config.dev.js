@@ -8,7 +8,7 @@ const path = require('path');
 module.exports = {
   devtool: 'source-map',
   entry: [
-    './src/index.js',
+    './assets/index.js',
     'webpack-hot-middleware/client?reload=true'
   ],
   output: {
@@ -58,7 +58,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'assets/index.html'
     }),
     new webpack.HotModuleReplacementPlugin()
   ]
