@@ -3,6 +3,7 @@ import {
 	SUBMIT_FORM,
 	FETCH_INFO,
 } from "./types";
+var querystring = require('querystring');
 
 const API_URL = 'https://qsf6mshp2m.execute-api.us-west-2.amazonaws.com/dev';
 // const API_URL = 'http://localhost:1337';
@@ -11,8 +12,7 @@ const BUCKET_URL = 'https://s3-us-west-2.amazonaws.com/tdspictures';
 export const submitForm = userData => {
 	const formData = new FormData();
 
-	formData.append('name', userData.name);
-	formData.append('phone', userData.phone);
+	const { name, phone } = userData;
 
 	return async dispatch => {
 		try {
@@ -29,18 +29,18 @@ export const submitForm = userData => {
 			console.log(upload);
 			const picture = `${BUCKET_URL}/${upload.data.original}`;
 			const thumbnail = `${BUCKET_URL}/${upload.data.thumb}`;
-			formData.append('picture', picture);
-			formData.append('thumbnail', thumbnail);
 
-			const userSubmitData = {
-				url: `${API_URL}/user`,
-				method: 'POST',
-				data: formData,
-			};
+			const postQueryString = querystring.stringify({
+				name,
+				phone,
+				picture,
+				thumbnail,
+			})
 
-			const newUserData = await axios(userSubmitData);
+			const newUserData = await axios.post(`${API_URL}/user`, postQueryString);
+			console.log(newUserData);
 			const newUser = {
-				id: newUserData.data.insertId,
+				id: newUserData.data.id,
 				name: userData.name,
 				phone: userData.phone,
 				picture,

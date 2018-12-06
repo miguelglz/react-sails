@@ -73,7 +73,7 @@ class Home extends React.Component {
 	    		name: '',
 		    	phone: '',
 		    	file: null,
-		    	fileUrl: null,
+		    	fileUrl: '',
 	    	},
 		});
 	}
@@ -93,16 +93,18 @@ class Home extends React.Component {
     	let file = e.target.files[0];
     	let fileUrl = e.target.value;
 
-    	file.convertToBase64(base64 => {
-			this.setState({
-				form: {
-					...this.state.form,
-					file,
-					fileUrl,
-					base64String: base64.split(',')[1]
-				}
-			});
-		}) 
+    	if(e.target.value && e.target.value !== '') {
+	    	file.convertToBase64(base64 => {
+				this.setState({
+					form: {
+						...this.state.form,
+						file,
+						fileUrl,
+						base64String: base64.split(',')[1]
+					}
+				});
+			})
+	    }
 	}
 
 	render() {
@@ -133,7 +135,7 @@ class Home extends React.Component {
 				      	<Col xs="4">
 					      	<FormGroup>
 								<Label for="picture">Picture</Label>
-      							<Input type="file" name="picture" id="picture" onChange={this.handleFileChange} />
+      							<Input type="file" name="picture" id="picture" value={this.state.fileUrl} onChange={this.handleFileChange} />
 						    </FormGroup>
 						 </Col>
 					</Row>
