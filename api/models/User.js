@@ -15,13 +15,18 @@ module.exports = {
         },
 
         phone: {
-            type: 'number',
+            type: 'string',
             required: true,
         },
 
         picture: {
             type: 'string',
-            required: false,
+            required: true,
+        },
+
+        thumbnail: {
+            type: 'string',
+            required: true,
         },
 
     },

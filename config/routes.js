@@ -25,8 +25,7 @@ module.exports.routes = {
     action: 'render',
     skipAssets: true
   },
-  'post /user/create': 'UserController.create',
-  'get /user': 'UserController.get',
+  // 'post /upload': 'UploadController.upload',
 
 
   /***************************************************************************

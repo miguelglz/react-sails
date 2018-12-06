@@ -8,6 +8,7 @@ const path = require('path');
 module.exports = {
   devtool: 'source-map',
   entry: [
+    "babel-polyfill",
     './assets/index.js',
     'webpack-hot-middleware/client?reload=true'
   ],

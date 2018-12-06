@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    entry: './assets/index.js'
+    entry: ["babel-polyfill", './assets/index.js']
   },
   output: {
     path: __dirname + '/.tmp/public',

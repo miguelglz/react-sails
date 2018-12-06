@@ -27,6 +27,7 @@ class Home extends React.Component {
 		    	phone: null,
 		    	file: null,
 		    	fileUrl: null,
+		    	base64String: null,
 	    	},
 	    };
 	    this.handleSubmit = this.handleSubmit.bind(this);
@@ -80,15 +81,28 @@ class Home extends React.Component {
 	handleFileChange(e) {
 	  	// const file = e.target.files[0]
 	  	e.preventDefault();
+
+	  	File.prototype.convertToBase64 = function(callback){
+            var reader = new FileReader();
+            reader.onloadend = function (e) {
+                callback(e.target.result, e.target.error);
+            };   
+            reader.readAsDataURL(this);
+        };
+
     	let file = e.target.files[0];
-    	console.log(file)
-    	this.setState({
-			form: {
-				...this.state.form,
-				file,
-				fileUrl: e.target.value
-			}
-		});
+    	let fileUrl = e.target.value;
+
+    	file.convertToBase64(base64 => {
+			this.setState({
+				form: {
+					...this.state.form,
+					file,
+					fileUrl,
+					base64String: base64.split(',')[1]
+				}
+			});
+		}) 
 	}
 
 	render() {
@@ -130,7 +144,7 @@ class Home extends React.Component {
 					</Row>
 				</Container>
 
-				<h2>Registers</h2>
+				<h2>Records</h2>
 			    <UserTable usersInfo={this.props.usersInfo} />
 		    </Jumbotron>
 		);

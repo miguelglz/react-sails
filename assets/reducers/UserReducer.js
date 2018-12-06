@@ -12,7 +12,7 @@ export default function (state = INITIAL_STATE, action) {
     case FETCH_INFO:
       return {
       	...state,
-      	usersInfo: action.payload.data
+      	usersInfo: action.payload.data.reverse()
       };
     case SUBMIT_FORM:
       return {

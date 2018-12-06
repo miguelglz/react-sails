@@ -6,7 +6,7 @@ const UserTable = (props) => (
     <th scope="row">{props.data.id}</th>
     <td>{props.data.name}</td>
     <td>{props.data.phone}</td>
-    <td>{props.data.picture}</td>
+    <td><a href={props.data.picture}><img src={props.data.thumbnail} /></a></td>
   </tr>
 );
 
