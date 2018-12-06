@@ -7,11 +7,11 @@ class UserTable extends React.Component {
     return (
       <Table>
         <thead>
-          <tr>
-            <th>#</th>
-            <th>Full Name</th>
-            <th>Phone Number</th>
-            <th>Picture</th>
+          <tr style={styles.row}>
+            <th style={styles.cellSmall}>#</th>
+            <th style={styles.cell}>Full Name</th>
+            <th style={styles.cell}>Phone Number</th>
+            <th style={styles.cell}>Picture</th>
           </tr>
         </thead>
         <tbody>
@@ -23,6 +23,19 @@ class UserTable extends React.Component {
         </tbody>
       </Table>
     );
+  }
+}
+
+const styles = {
+  row: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  cell: {
+    flex: 3,
+  },
+  cellSmall: {
+    flex: 1,
   }
 }
 

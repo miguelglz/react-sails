@@ -19,8 +19,8 @@ module.exports.seeds = {
 		{
 			name: 'Peter Quinn',
 			phone: '4620414532',
-			picture: 'https://s3-us-west-2.amazonaws.com/tdspictures/dba2b7574a888ae970f362b40ea37d638cde35b0/original.jpg',
-			thumbnail: 'https://s3-us-west-2.amazonaws.com/tdspictures/dba2b7574a888ae970f362b40ea37d638cde35b0/thumb_128x128.jpg',
+			picture: 'https://s3-us-west-2.amazonaws.com/tdspictures/e62d0ba741586eb4c861cb1cf7e8c936a8f672f7/original.jpg',
+			thumbnail: 'https://s3-us-west-2.amazonaws.com/tdspictures/e62d0ba741586eb4c861cb1cf7e8c936a8f672f7/thumb_128x128.jpg',
 			
 		},
 		{
