@@ -9,7 +9,7 @@ module.exports = {
   devtool: 'source-map',
   entry: [
     "babel-polyfill",
-    './assets/index.js',
+    './client/index.js',
     'webpack-hot-middleware/client?reload=true'
   ],
   output: {
@@ -59,7 +59,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'assets/index.html'
+      template: 'client/index.html'
     }),
     new webpack.HotModuleReplacementPlugin()
   ]

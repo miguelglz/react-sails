@@ -49,8 +49,8 @@ module.exports.datastores = {
     *                                                                          *
     ***************************************************************************/
     adapter: require('sails-mysql'),
-    // url: 'mysql://root:@127.0.0.1:3306/customers',
-    url: 'mysql://root:rootroot@tdssails.cxw2akhaubrv.us-west-2.rds.amazonaws.com:3306/customers',
+    url: 'mysql://root:@127.0.0.1:3306/customers',
+    // url: 'mysql://root:rootroot@tdssails.cxw2akhaubrv.us-west-2.rds.amazonaws.com:3306/customers',
 
   },
 

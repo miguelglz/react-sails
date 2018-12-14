@@ -5,8 +5,8 @@ import {
 } from "./types";
 var querystring = require('querystring');
 
-const API_URL = 'https://qsf6mshp2m.execute-api.us-west-2.amazonaws.com/dev';
-// const API_URL = 'http://localhost:1337';
+// const API_URL = 'https://qsf6mshp2m.execute-api.us-west-2.amazonaws.com/dev';
+const API_URL = 'http://localhost:1337';
 const BUCKET_URL = 'https://s3-us-west-2.amazonaws.com/tdspictures';
 
 export const submitForm = userData => {
